@@ -98,10 +98,11 @@ class Instagram:
                 video_src = "/html/body/div[1]/section/main/div/div[1]/article/div[2]/div/div/div[1]/div/div/video"
                 post_id = post_url.split("/")[-2]
 
-                if os.path.exists(f"resource/img/{file_name}"):
-                        pass
+                if os.path.exists(f"resources/img/{file_name}"):
+                    print(f"YE! {file_name}")
                 else:
-                    os.mdir(f"resource/img/{file_name}")
+                    print(f"Create directory: {file_name}")
+                    os.mkdir(f"resources/img/{file_name}")
 
                 if self.xpath_exists(img_src):
                     img_src_url = browser.find_element_by_xpath(img_src).get_attribute("src")
